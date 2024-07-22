@@ -206,6 +206,42 @@ public class Day2note {
 //        ob.method();
     }
 
+    final class StudentImmutable{
+        private final int id;
+        private final String firstName;
+        private final String lastName;
+        private final List<Course> course;
+        StudentImmutable(int id, String firstName, String lastName, List<Course> course) {
+            this.id = id;
+            this.firstName = firstName;
+            this.lastName = lastName;
+            this.course = deepCopy(course);
+        }
+        public int getId() {
+            return id;
+        }
+        public String getFirstName() {
+            return firstName;
+        }
+        public String getLastName() {
+            return lastName;
+        }
+        public List<Course> getCourse() {
+            List<Course> newCourse = deepCopy(this.course);
+            return newCourse;
+        }
+        private List<Course> deepCopy(List<Course> course) {
+            List<Course> newCourse = new ArrayList<>();
+            for(Course i : course) {
+                newCourse.add(i);
+            }
+            return newCourse;
+        }
+    }
+    class Course{
+        String courseName;
+    }
+
     static class Node{
 
     }

@@ -1,0 +1,38 @@
+1. Design Pattern
+    23 design pattern
+        - Creational pattern
+            Singleton Pattern/ Factory Pattern/ Prototype Pattern ...
+        - Structural Pattern
+            Decorator Pattern/ Static Proxy / Dynamic Proxy...
+        - Behavioral Pattern
+            Observer Pattern/ Interpreter Pattern / Iterator Pattern ...
+
+    Singleton Pattern
+            - only one object gets created
+            usage case
+                hardware interface access, Logger, Configuration File ->I/O (configurate file), Thread Pool, Cache ....
+                   |                          |
+                   V                          V
+                (printer)            (point to some data)
+
+    Builder Pattern
+            Car myCar = Car.build.frame("iron").make("Toyota").model("prius").modelYear(2000).build();
+
+    Factory Pattern
+            client     ->        PhoneFactory
+                  <- Sony
+
+    Decorator Pattern
+
+    Observer Pattern
+
+    static proxy
+        one proxy to one server relationship
+
+    dynamic proxy
+        one proxy to many server or many to many server relationship
+        - java reflection
+
+2. reflection (API): Java is dynamic programming language
+       modify behavior of methods, classes, interfaces at runtime
+

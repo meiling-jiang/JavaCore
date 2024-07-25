@@ -107,23 +107,34 @@ public class Day3note {
             empty(), of(), ofNullable(), isPresent(), isEmpty(), orElse(), orElseThrow()
     */
     public static void main(String[] args) throws Throwable {
-
-        // Optional NPE
-//        String[] arr = new String[3];
-//        String[] array = new String[]{"abc", "aa", "dd"};
-//
-//        if (arr[0] == null) {
-//            System.out.println("this is null");
-//            throw new IllegalArgumentException("this is null");
-//        } else {
-//            System.out.println(arr[0]);
+//        List<int[]> list = new ArrayList<>();
+//        try {
+//            while (true) {
+//                // Continuously allocate memory to trigger OutOfMemoryError
+//                list.add(new int[1000000]);
+//            }
+//        } catch (OutOfMemoryError e) {
+//            // Log the error and take appropriate action
+//            System.err.println("OutOfMemoryError caught: " + e.getMessage());
+//            // Perform emergency cleanup or failover procedures
 //        }
 
-//        Optional op = Optional.ofNullable(arr[0]);
-//        System.out.println(op.orElse("this is null"));
-//        op.orElseThrow(() -> {
-//            return new IllegalArgumentException("this is null");
-//        });
+        // Optional NPE
+        String[] arr = new String[3];
+        String[] array = new String[]{"abc", "aa", "dd"};
+
+        if (arr[0] == null) {
+            System.out.println("this is null");
+            throw new IllegalArgumentException("this is null");
+        } else {
+            System.out.println(arr[0]);
+        }
+
+        Optional op = Optional.ofNullable(arr[0]);
+        System.out.println(op.orElse("this is null"));
+        op.orElseThrow(() -> {
+            return new IllegalArgumentException("this is null");
+        });
 
         // lambda expression and predefined functional interface
         BiFunction<Integer, Integer, Integer> myAdd = (a, b) -> {return a + b;}; // or 'a + b;'
